@@ -20,4 +20,4 @@ cluster_name = "kepler-prod-gke"
 
 release_channel = "REGULAR"
 
-deletion_protection = false
+deletion_protection = true

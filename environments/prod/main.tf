@@ -15,17 +15,17 @@ module "network" {
 module "gke" {
   source = "../../modules/gke"
 
-  project_id           = var.project_id
-  region               = var.region
-  cluster_name         = var.cluster_name
-  release_channel      = var.release_channel
-  deletion_protection  = var.deletion_protection
+  project_id          = var.project_id
+  region              = var.region
+  cluster_name        = var.cluster_name
+  release_channel     = var.release_channel
+  deletion_protection = var.deletion_protection
 
-  network              = module.network.network_name
-  subnetwork           = module.network.subnet_name
+  network    = module.network.network_name
+  subnetwork = module.network.subnet_name
 
-  pods_range_name      = var.pods_range_name
-  services_range_name  = var.services_range_name
+  pods_range_name     = var.pods_range_name
+  services_range_name = var.services_range_name
 }
 
 module "fleet" {
