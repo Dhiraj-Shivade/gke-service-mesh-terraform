@@ -4,8 +4,22 @@ resource "google_gke_hub_feature" "servicemesh" {
 
   project  = var.project_id
   location = "global"
-  name     = "servicemesh"
+
+  name = "servicemesh"
+
+
+  fleet_default_member_config {
+
+    mesh {
+
+      management = "MANAGEMENT_AUTOMATIC"
+
+    }
+
+  }
+
 }
+
 
 
 resource "google_gke_hub_feature_membership" "servicemesh_membership" {
@@ -21,7 +35,8 @@ resource "google_gke_hub_feature_membership" "servicemesh_membership" {
   membership = var.membership_id
 
   membership_location = var.membership_location
-  
+
+
   mesh {
 
     management = "MANAGEMENT_AUTOMATIC"
