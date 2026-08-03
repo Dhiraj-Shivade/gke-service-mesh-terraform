@@ -16,14 +16,14 @@ resource "google_compute_subnetwork" "private" {
 
   secondary_ip_range {
 
-    range_name = var.pods_range_name
+    range_name    = var.pods_range_name
     ip_cidr_range = var.pods_cidr
 
   }
 
   secondary_ip_range {
 
-    range_name = var.services_range_name
+    range_name    = var.services_range_name
     ip_cidr_range = var.services_cidr
 
   }
@@ -32,7 +32,7 @@ resource "google_compute_subnetwork" "private" {
 
 resource "google_compute_router" "router" {
 
-  name = "${var.network_name}-router"
+  name = var.router_name
 
   region = var.region
 
@@ -42,7 +42,7 @@ resource "google_compute_router" "router" {
 
 resource "google_compute_router_nat" "nat" {
 
-  name = "${var.network_name}-nat"
+  name = var.nat_name
 
   router = google_compute_router.router.name
 

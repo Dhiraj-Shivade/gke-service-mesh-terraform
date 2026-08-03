@@ -57,3 +57,11 @@ variable "deletion_protection" {
   description = "Enable deletion protection"
   type        = bool
 }
+
+variable "router_name" {
+  type = string
+}
+
+variable "nat_name" {
+  type = string
+}

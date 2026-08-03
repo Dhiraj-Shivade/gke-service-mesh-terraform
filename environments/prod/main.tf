@@ -10,6 +10,8 @@ module "network" {
   pods_cidr           = var.pods_cidr
   services_range_name = var.services_range_name
   services_cidr       = var.services_cidr
+  router_name         = var.router_name
+  nat_name            = var.nat_name
 }
 
 module "gke" {
