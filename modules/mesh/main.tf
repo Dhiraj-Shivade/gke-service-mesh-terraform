@@ -12,7 +12,7 @@ resource "google_gke_hub_feature_membership" "servicemesh_membership" {
 
   project = var.project_id
 
-  location = "global"
+  location = var.location
 
   feature = google_gke_hub_feature.servicemesh.name
 
@@ -20,9 +20,7 @@ resource "google_gke_hub_feature_membership" "servicemesh_membership" {
 
 
   mesh {
-
     management = "MANAGEMENT_AUTOMATIC"
-
   }
 
 }

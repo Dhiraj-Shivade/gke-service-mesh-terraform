@@ -44,4 +44,6 @@ module "mesh" {
   project_id = var.project_id
 
   membership_id = var.cluster_name
+
+  location = var.region
 }
