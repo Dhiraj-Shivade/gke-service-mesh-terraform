@@ -21,7 +21,7 @@ cluster_name = "kepler-prod-gke"
 
 release_channel = "REGULAR"
 
-deletion_protection = true
+deletion_protection = false
 
 router_name = "kepler-vpc-router"
 
