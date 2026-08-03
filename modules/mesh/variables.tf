@@ -6,6 +6,6 @@ variable "membership_id" {
   type = string
 }
 
-variable "location" {
+variable "membership_location" {
   type = string
 }

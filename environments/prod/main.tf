@@ -45,5 +45,5 @@ module "mesh" {
 
   membership_id = var.cluster_name
 
-  location = var.region
+  membership_location = var.region
 }
