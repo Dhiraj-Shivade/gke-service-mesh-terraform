@@ -13,11 +13,9 @@ pods_range_name = "gke-pods"
 
 pods_cidr = "10.100.0.0/16"
 
-
 services_range_name = "gke-services"
 
 services_cidr = "10.101.0.0/20"
-
 
 cluster_name = "kepler-prod-gke"
 
