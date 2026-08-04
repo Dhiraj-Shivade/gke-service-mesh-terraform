@@ -38,12 +38,27 @@ module "fleet" {
   location     = var.region
 }
 
+resource "time_sleep" "wait_for_fleet" {
+
+  depends_on = [
+    module.fleet
+  ]
+
+  create_duration = "5m"
+}
+
 module "mesh" {
+
   source = "../../modules/mesh"
+
+  depends_on = [
+    time_sleep.wait_for_fleet
+  ]
 
   project_id = var.project_id
 
-  membership_id = var.cluster_name
+  membership_id = module.gke.cluster_name
 
   membership_location = var.region
+
 }
