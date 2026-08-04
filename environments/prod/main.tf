@@ -44,7 +44,7 @@ resource "time_sleep" "wait_for_fleet" {
     module.fleet
   ]
 
-  create_duration = "12m"
+  create_duration = "3m"
 }
 
 module "mesh" {
